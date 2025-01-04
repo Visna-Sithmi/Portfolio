@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="icon" href="../images/favi1.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/about.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+   
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <div class="about">
+        <div class="about-text"></div>
+        <h2 class="heading">About <span class="txt1">Me</span></h2>
+        <div class="text-box">
+        <p class="phara">I am an undergraduate student specializing in Software Engineering with a passion for 
+            crafting dynamic and engaging websites. This portfolio is a reflection of my academic journey,
+            blending technical expertise with a flair for creative design to deliver intuitive and user-friendly
+            experiences. I thrive on exploring innovative ways technology can solve real-world challenges and improve lives. 
+            Through this site, I share my projects, ideas, and milestones in web development. Join me on this exciting journey,
+            Let's create something great together!</p>
+
+            <a href="CV.pdf" class="btn-box" download> Downloard CV</a>
+        </div>
+        </div>
+        <script src="../js/about.js"></script>
+        <script src="../js/main.js"></script>
+
+        <script>
+            const menuToggle = document.getElementById('menu-toggle');
+            const navbar = document.getElementById('nav-menu'); // Corrected ID here
+    
+            menuToggle.addEventListener('click', () => {
+                navbar.classList.toggle('active');
+            });
+        </script>
+</body>
+</html>

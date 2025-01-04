@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="icon" href="../images/favi1.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../CSS/portfolio.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <section class="projects-section">
+        <h2 class="heading">Latest <span>Projects</span></h2>
+        <div class="project-card">
+            <div class="project-image">
+                <img src="../images/project.png" alt="Blood Donation Website">
+            </div>
+            <div class="project-details">
+                <h3 class="project-title">Blood Donation Website</h3>
+                <p class="project-description">
+                    A full-stack blood donation solution built with PHP and MySQL.
+                </p>
+                <div class="project-tags">
+                    <span class="tag">HTML</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">JS</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MySQL</span>
+                </div>
+                <div class="project-buttons">
+                    <a href="https://github.com/Visna-Sithmi/SLIIT-IWT-Project" target="_blank" class="btn code-btn">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    <a href="https://iwtproject.anupa.lk/" target="_blank" class="btn live-demo-btn">
+                        <i class="fa fa-external-link"></i> Live Demo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.heading', {
+            origin: 'left',
+            distance: '90px',
+            duration: 2000,
+            reset: true
+        });
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '10px',
+            duration: 1000,
+            delay: 800,
+            reset: false
+        });
+        
+        sr.reveal('.project-card', {
+            interval: 500
+        });
+        </script>
+    <script src="../js/main.js"></script>
+
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('nav-menu'); // Corrected ID here
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

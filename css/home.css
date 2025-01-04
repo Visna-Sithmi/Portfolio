@@ -1,0 +1,173 @@
+/* General styles for all screen sizes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/background.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.home-content h1 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: -3px 0;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 14px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 10px #0ef;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.container .text {
+    position: relative;
+    color: #0ef;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.container .text.first-text {
+    color: #fff;
+}
+
+.text.sec-text::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #081b29;
+    border-left: 2px solid #0ef;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%, 60% {
+        left: calc(100% + 4px);
+    }
+    100% {
+        left: 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .text.first-text,
+    .text.sec-text {
+        display: none; 
+    }
+    .home {
+        position: relative;
+        width: 100%;
+        height: auto; /* Allow height to adjust based on content */
+        background-color: rgba(19, 50, 72, 0.6); /* Add background color */
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        padding: 20px;
+    }
+
+    .home::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 50%; /* Adjust height to fit the visible image */
+        background: url('../images/background.png') no-repeat center right; /* Show the right side of the image */
+        background-repeat: no-repeat;
+        background-position: left center; /* Position image on the right side */
+        background-size: auto 50%;
+        background-size: cover;
+        z-index: -1; /* Send image to the back */
+    }
+
+    .home-content {
+        margin-top: 60%; /* Position content below the image */
+        text-align: left; /* Align text to the left */
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .home-content h1 {
+        font-size: 40px; /* Adjust font size */
+        margin-top: 0px;
+        margin-left: 0; /* Align to the left */
+    }
+
+    .home-content h3 {
+        font-size: 20px; /* Adjust font size */
+        margin-left: 10px; /* Align to the left */
+    }
+
+    .home-sci {
+        display: flex;
+        justify-content: flex-start; /* Align icons to the left */
+        margin-top: 10px;
+    }
+
+    .home-sci a {
+        width: 30px;
+        height: 30px;
+        margin: 10px 15px;
+    }
+
+    .btn-box {
+        padding: 8px 16px;
+        font-size: 12px;
+        margin: 15px 0 10; /* Add some margin */
+        text-align: left; /* Align button to the left */
+    }
+}

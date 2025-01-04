@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="../images/favi1.png" type="image/png">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/home.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Portfolio</a>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="navbar" id="nav-menu">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="portfolio.html" class="nav-link">Portfolio</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </header>
+    <section class="home">
+        <div class="home-content">
+            <h3>Hello, I'm</h3>
+            <h1>Visna Sithmi</h1>
+            <div class="container">
+                <span class="text first-text">I'm a </span>
+                <span class="text sec-text">Web Developer</span>
+                <br>
+                <div class="home-sci">
+                    <a href="mailto:ihvisnasithmi@gmail.com"><i class='bx bxl-gmail'></i></a>
+                    <a href="https://www.facebook.com/share/hcBunoQuq934PTRo/?mibextid=qi2Omg"><i class='bx bxl-facebook-circle'></i></a>
+                    <a href="https://www.linkedin.com/in/visna-sithmi/?trk=opento_sprofile_topcard"><i class='bx bxl-linkedin'></i></a>
+                    <a href="https://www.instagram.com/visnasithmi/profilecard/?igsh=MXdpa2t3c2locDExNA=="><i class='bx bxl-instagram'></i></a>
+                </div>
+                <br><br>
+                <a href="about.html" class="btn-box"> More About Me</a>
+            </div>
+        </div>
+    </section>
+    <script src="../js/main.js" defer></script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('nav-menu'); // Corrected ID here
+
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

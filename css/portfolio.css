@@ -1,0 +1,160 @@
+/* Section Styling */
+.projects-section {
+    padding: 40px;
+    background-color: #10182F;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h2{
+    line-height: 1;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 span{
+    color: #0ef;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #0ef;
+    margin-bottom: 10px;
+}
+
+/* Project Card Styling */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #1D253B;
+    border-radius: 10px;
+    margin: 10px auto;
+    max-width: 400px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(155, 148, 148, 0.2);
+}
+
+/* Project Image */
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #0ef
+}
+
+/* Project Details */
+.project-details {
+    padding: 20px;
+    text-align: left;
+}
+
+.project-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Tags */
+.project-tags {
+    margin-bottom: 15px;
+}
+
+.tag {
+    display: inline-block;
+    background: #0ef;
+    color: #10182F;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+}
+
+/* Buttons */
+.project-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+    transition: background 0.3s ease;
+}
+
+.code-btn {
+    background: #0ef;
+    color: #10182F;
+}
+
+.live-demo-btn {
+    background: #0ef;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 20px; /* Reduced padding for smaller screens */
+    }
+
+    .project-card {
+        max-width: 90%; /* Use more screen width for cards */
+        margin: 15px auto;
+        margin-top: 50px;
+    }
+
+    .project-title {
+        font-size: 1.2rem; /* Adjusted title size */
+    }
+
+    .project-description {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 0.85rem; /* Adjusted button font size */
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 28px; /* Further reduced for smaller screens */
+        margin-bottom: 20px;
+    }
+
+    .project-title {
+        font-size: 1.1rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+
+    .tag {
+        font-size: 0.75rem; /* Adjusted tag size */
+    }
+
+    .project-card {
+        max-width: 100%; /* Full width on smallest screens */
+    }
+}
