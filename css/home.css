@@ -67,9 +67,6 @@
     box-shadow: 0 0 10px #0ef;
 }
 
-.container {
-    overflow: hidden;
-}
 
 .container .text {
     position: relative;
@@ -104,10 +101,17 @@
 }
 
 @media (max-width: 768px) {
+    /* Ensure the container is visible on mobile view */
+    .container {
+        display: block ;  /* Ensure it's shown */
+    }
+
+   
     .text.first-text,
     .text.sec-text {
-        display: none; 
+        font-size: 20px;
     }
+
     .home {
         position: relative;
         width: 100%;
@@ -119,36 +123,34 @@
         padding: 20px;
     }
 
-    .home::before {
+    .home {
         content: "";
         position: absolute;
         top: 0;
         right: 0;
         width: 100%;
-        height: 50%; /* Adjust height to fit the visible image */
-        background: url('../images/background.png') no-repeat center right; /* Show the right side of the image */
-        background-repeat: no-repeat;
-        background-position: left center; /* Position image on the right side */
-        background-size: auto 50%;
+        height: 100vh;
+        background: url('../images/home-m.png') no-repeat center center;
         background-size: cover;
-        z-index: -1; /* Send image to the back */
+        z-index: -1; /* Ensure it's behind other content */
+        background-size: contain;
     }
-
+    
     .home-content {
-        margin-top: 60%; /* Position content below the image */
-        text-align: left; /* Align text to the left */
+        margin-top: 20%; /* Position content below the image */
+        text-align: center; /* Align text to the left */
         max-width: 100%;
         width: 100%;
     }
 
     .home-content h1 {
-        font-size: 40px; /* Adjust font size */
+        font-size: 35px; /* Adjust font size */
         margin-top: 0px;
         margin-left: 0; /* Align to the left */
     }
 
     .home-content h3 {
-        font-size: 20px; /* Adjust font size */
+        font-size: 18px; /* Adjust font size */
         margin-left: 10px; /* Align to the left */
     }
 
@@ -156,18 +158,21 @@
         display: flex;
         justify-content: flex-start; /* Align icons to the left */
         margin-top: 10px;
+        margin-left: 25%;
     }
 
     .home-sci a {
         width: 30px;
         height: 30px;
-        margin: 10px 15px;
+        margin: 2px 15px;
+        margin-bottom: -20px;
     }
 
     .btn-box {
         padding: 8px 16px;
         font-size: 12px;
-        margin: 15px 0 10; /* Add some margin */
+        margin: 0px 0 5; /* Add some margin */
         text-align: left; /* Align button to the left */
+        margin-top: -100px;
     }
 }

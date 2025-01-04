@@ -119,6 +119,8 @@
         grid-template-columns: 1fr; /* Single column for small screens */
         gap: 2rem;
         padding: 20px;
+        position: relative;
+        z-index: 1;
     }
 
     .contact-icons {

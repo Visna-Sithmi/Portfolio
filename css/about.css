@@ -82,7 +82,7 @@ h2{
 @media (max-width: 768px) {
     .about {
         background: rgba(19, 50, 72, 0.6); /* Solid background color */
-        background-image: url('../images/about4.png'); /* Add the image */
+        background-image: url('../images/about-m.png'); /* Add the image */
         background-repeat: no-repeat;
         background-position: left center; /* Position image on the right side */
         background-size: auto 100%; /* Ensure the image is sized vertically */
