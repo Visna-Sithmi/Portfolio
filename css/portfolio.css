@@ -12,6 +12,7 @@ h2{
     font-size: 40px;
     text-align: center;
     margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 h2 span{
@@ -128,6 +129,9 @@ h2 span{
     .btn {
         font-size: 0.85rem; /* Adjusted button font size */
         padding: 8px 10px;
+    }
+    h2{
+        margin-top: 100px;
     }
 }
 
