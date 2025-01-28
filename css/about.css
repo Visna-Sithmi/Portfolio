@@ -1,50 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Include padding and border in element width/height */
+}
 
-.about
-{
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.about {
     position: relative;
-    width:100%;
+    width: 100%;
     height: 100vh;
     background: url('../images/about3.png') no-repeat;
     background-size: cover;
     background-position: center;
-    padding: 50px 10% 0; 
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center-align the content */
+    justify-content: center; /* Vertically center the content */
 }
 
-.txt1
-{
+.txt1 {
     color: #0ef;
     font-family: 'Poppins', sans-serif;
 }
 
-
-h2{
+h2 {
     font-size: 45px;
     font-family: 'Poppins', sans-serif;
-    margin: 100px 10px 10px 700px;
+    margin: 20px 0; /* Adjusted to prevent overflow */
+    text-align: center; /* Center-align heading */
 }
 
-
-
-.text-box
-{
+.text-box {
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     z-index: 222;
     background-color: rgba(19, 50, 72, 0.6);
-    opacity: 0.8;
-    padding: 50px;
+    opacity: 0.9;
+    padding: 40px;
     max-width: 700px;
-    margin-top: 22px;
-    margin-bottom: 40px;
-    margin-left: 700px;
+    width: 100%; /* Ensure it scales with the viewport */
+    margin: 20px 0; /* Center and add spacing */
     border: 1px solid #081b29;
     border-radius: 10px;
+    text-align: center;
 }
 
-.btn-box
-{
+.btn-box {
     display: inline-block;
     padding: 12px 28px;
     background: #0ef;
@@ -54,45 +62,41 @@ h2{
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
-    margin-bottom: -30px;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.btn-box:hover
-{
+.btn-box:hover {
     box-shadow: 0 0 10px #0ef;
-    
 }
 
 /* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
     h2 {
         font-size: 35px;
-        margin: 60px 10px 10px 50px; /* Adjust heading position */
+        margin: 20px 0;
     }
 
     .text-box {
         font-size: 14px;
-        max-width: 90%;
-        margin: 20px auto; /* Center the text box */
         padding: 30px;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 768px) {
     .about {
-        background: rgba(19, 50, 72, 0.6); /* Solid background color */
-        background-image: url('../images/about-m.png'); /* Add the image */
+        height: 100vh; /* Allow height to adjust based on content */
+        padding: 20px 5%; /* Reduce padding for smaller screens */
+        background: rgba(19, 50, 72, 0.6); /* Solid background */
+        background-image: url('../images/about-m.png');
         background-repeat: no-repeat;
-        background-position: center; /* Position image on the right side */
-        background-size: auto 100%; /* Ensure the image is sized vertically */
-        margin-top: 50px;
+        background-position: center;
+        background-size: cover;
     }
 
     h2 {
         font-size: 30px;
-        margin: 40px auto; /* Center on smaller screens */
-        text-align: center;
+        margin: 20px 0;
     }
 
     .text-box {
@@ -108,28 +112,35 @@ h2{
 
 @media (max-width: 480px) {
     .about {
-        background: rgba(19, 50, 72, 0.6); /* Solid background color */
-        background-image: url('../images/about-m.png'); /* Add the image */
+        height: 100vh;
+        padding: 20px 5%; /* Reduce padding for extra-small screens */
+        background: rgba(19, 50, 72, 0.6);
+        background-image: url('../images/about-m.png');
+        background-size: cover;
         background-repeat: no-repeat;
-        background-position: center; /* Position image on the right side */
-        background-size: auto 100%; /* Ensure the image is sized vertically */
-        margin-top: 50px;
+        background-position: center;
     }
 
     h2 {
         font-size: 25px;
-        margin: 20px auto;
-        text-align: center;
+        margin: 15px 0;
     }
 
     .text-box {
         font-size: 12px;
         padding: 15px;
-        max-width: 100%;
+        max-width: 100%; /* Ensure it fits the screen */
     }
 
     .btn-box {
         font-size: 10px;
         padding: 8px 16px;
+    }
+
+    /* Center the Download CV button only in mobile view */
+    .btn-box {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; /* Center the button */
     }
 }

@@ -128,7 +128,7 @@
         padding: 20px;
     }
 
-    .home {
+    .home{
         content: "";
         position: absolute;
         top: 0;
@@ -142,7 +142,7 @@
     }
     
     .home-content {
-        margin-top: 20%; /* Position content below the image */
+        margin-top: 25%; /* Position content below the image */
         text-align: center; /* Align text to the left */
         max-width: 100%;
         width: 100%;
@@ -179,7 +179,7 @@
         padding: 8px 16px;
         font-size: 12px;
         margin: 0px 0 5; /* Add some margin */
-        text-align: left; /* Align button to the left */
+        text-align: center; /* Align button to the left */
         margin-top: -100px;
     }
 
@@ -198,7 +198,7 @@
         padding: 20px;
     }
 
-    .home {
+    .home{
         content: "";
         position: absolute;
         top: 0;
@@ -232,7 +232,8 @@
 
     .btn-box {
         padding: 6px 14px;
-        font-size: 10px;
+        font-size: 15px;
+        text-align: center;
     }
 
     .container .text {
