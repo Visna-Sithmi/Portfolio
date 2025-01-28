@@ -211,6 +211,10 @@
         background-size: contain;
     }
 
+    .home-content{
+        margin-top: 30%;
+    }
+
     .home-content h1 {
         font-size: 28px;
     }
@@ -223,6 +227,7 @@
         width: 25px;
         height: 25px;
         font-size: 14px;
+        align-items: center;
     }
 
     .btn-box {
