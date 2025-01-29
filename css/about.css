@@ -90,7 +90,10 @@ h2{
 
     .text-box {
         font-size: 14px;
-        padding: 20px;
+        max-width: 90%;
+        margin: 20px auto; /* Override margin-left: 50% and center it */
+        transform: none; /* Remove the translate effect */
+        padding: 30px;
     }
 
     .btn-box {
@@ -123,8 +126,10 @@ h2{
 
     .text-box {
         font-size: 12px;
-        padding: 15px;
         max-width: 100%;
+        margin: 20px auto; /* Center the box */
+        padding: 20px;
+        transform: none; /* Remove the translate effect */
     }
 
     .btn-box {
