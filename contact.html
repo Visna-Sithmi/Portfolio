@@ -94,25 +94,11 @@
 
 <script>
     const menuToggle = document.getElementById('menu-toggle');
-    const navbar = document.getElementById('nav-menu');
-    const closeMenu = document.createElement('i');
-    
-    // Add cancel button inside menu-toggle dynamically
-    closeMenu.className = 'bx bx-x';
-    closeMenu.id = 'close-menu';
-    menuToggle.appendChild(closeMenu);
-    
+    const navbar = document.getElementById('nav-menu'); // Corrected ID here
+
     menuToggle.addEventListener('click', () => {
         navbar.classList.toggle('active');
-        closeMenu.style.display = navbar.classList.contains('active') ? 'block' : 'none';
     });
-    
-    closeMenu.addEventListener('click', () => {
-        navbar.classList.remove('active');
-        closeMenu.style.display = 'none';
-    });
-    
 </script>
-
 </body>
 </html>

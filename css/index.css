@@ -70,17 +70,6 @@ body {
     transition: 0.3s;
 }
 
-/* Cancel (Close) Button */
-.menu-toggle i {
-    display: none;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-    position: absolute;
-    top: -5px;
-    right: -30px;
-}
-
 @media (max-width: 768px) {
     .navbar {
         display: none;
@@ -104,9 +93,5 @@ body {
 
     .menu-toggle {
         display: flex;
-    }
-
-    .navbar.active + .menu-toggle i {
-        display: block; /* Show cancel button when menu is active */
     }
 }
