@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio | Visna</title>
+    
+    <!-- Favicon -->
     <link rel="icon" href="../images/favi1.png" type="image/png">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/index.css">
     <link rel="stylesheet" href="../css/portfolio.css">
+    
+    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Section -->
     <header class="header">
         <a href="index.html" class="logo">Visna.</a>
         <div class="menu-toggle" id="menu-toggle">
@@ -26,6 +35,8 @@
             <a href="/contact/" class="nav-link">Contact</a>
         </nav>
     </header>
+    
+    <!-- Projects Section -->
     <section class="projects-section">
         <h2 class="heading">Latest <span>Projects</span></h2>
         <div class="project-card">
@@ -55,34 +66,32 @@
             </div>
         </div>
     </section>
+    
+    <!-- Scripts -->
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        ScrollReveal().reveal('.heading', {
-            origin: 'left',
-            distance: '90px',
-            duration: 2000,
-            reset: true
+        document.addEventListener("DOMContentLoaded", function() {
+            ScrollReveal().reveal('.heading', {
+                origin: 'left',
+                distance: '90px',
+                duration: 2000,
+                reset: true
+            });
+            
+            ScrollReveal().reveal('.project-card', {
+                origin: 'bottom',
+                distance: '10px',
+                duration: 1000,
+                delay: 800,
+                reset: false,
+                interval: 500
+            });
         });
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '10px',
-            duration: 1000,
-            delay: 800,
-            reset: false
-        });
-        
-        sr.reveal('.project-card', {
-            interval: 500
-        });
-        </script>
+    </script>
     <script src="../js/main.js"></script>
-
     <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const navbar = document.getElementById('nav-menu'); // Corrected ID here
-
-        menuToggle.addEventListener('click', () => {
-            navbar.classList.toggle('active');
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('active');
         });
     </script>
 </body>
