@@ -32,15 +32,17 @@ setInterval(textLoad, 12000);
 const navLinks = document.querySelectorAll(".nav-link");
 
 // Get the full current page URL without query parameters
-const currentUrl = window.location.href.split(/[?#]/)[0]; 
+const currentUrl = window.location.pathname.replace(/\/$/, ""); 
 
 navLinks.forEach(link => {
-    const linkUrl = new URL(link.href, window.location.origin).href; // Convert to absolute URL
+    // Get the link's href, normalize it, and remove trailing slashes
+    let linkUrl = new URL(link.href, window.location.origin).pathname.replace(/\/$/, "");
 
     if (currentUrl === linkUrl) {
         link.classList.add("active");
     }
 });
+
 
 
 
