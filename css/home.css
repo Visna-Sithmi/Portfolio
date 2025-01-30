@@ -149,7 +149,7 @@
     }
 
     .home-content h1 {
-        font-size: 35px; /* Adjust font size */
+        font-size: 40px; /* Adjust font size */
         margin-top: 0px;
         margin-left: 0; /* Align to the left */
     }
@@ -162,16 +162,17 @@
     .home-sci {
         display: flex;
         justify-content: center; /* Align icons to the left */
-        margin-top: 10px;
-        margin-left: 10%;
-        gap:20px
+        align-items: center;
+        width: 100%; /* Takes full width to center properly */
+        margin-top: 10px; /* Adjust as needed */
+        gap: 45px; /* Space between icons */
     }
 
     .home-sci a {
-        width: 30px;
-        height: 30px;
-        margin: 2px 15px;
-        margin-bottom: -20px;
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        margin: 0; /* Remove conflicting margins */
     }
 
     .btn-box {
@@ -216,18 +217,26 @@
     }
 
     .home-content h1 {
-        font-size: 30px;
+        font-size: 35px;
     }
 
     .home-content h3 {
         font-size: 18px;
     }
+    .home-sci {
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;
+        width: 100%; /* Full width for proper centering */
+        margin-top: 10px; /* Adjust spacing */
+        gap: 25px; /* Space between icons */
+    }
 
     .home-sci a {
-        width: 25px;
-        height: 25px;
-        font-size: 14px;
-        align-items: center;
+        width: 40px; /* Reduce icon size */
+        height: 40px;
+        font-size: 20px;
+        margin: 0; /* Remove extra margin */
     }
 
     .btn-box {
