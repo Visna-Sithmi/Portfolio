@@ -14,11 +14,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // ✅ Smooth scroll function (works with HashRouter)
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const yOffset = -80; // navbar height
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+    setIsMobileMenuOpen(false);
+  };
+
   const navLinks = [
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
+    { label: "About", id: "about" },
+    { label: "Skills", id: "skills" },
+    { label: "Projects", id: "projects" },
+    { label: "Contact", id: "contact" },
   ];
 
   return (
@@ -34,30 +47,36 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between h-20">
-          <a href="#" className="font-heading font-bold text-2xl text-white">
-            VS<span className="text-primary">.</span>
-          </a>
+          {/* Logo */}
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="font-heading font-bold text-2xl text-white"
+          >
+            Visna<span className="text-primary">.</span>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={link.href}
-                className="text-white/70 hover:text-primary font-medium transition-colors duration-300 
-                  relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+                onClick={() => scrollToSection(link.id)}
+                className="text-white/70 hover:text-primary font-medium transition-colors duration-300
+                  relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5
                   after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
-            <a
-              href="#contact"
-              className="bg-primary text-primary-foreground px-6 py-2.5 font-semibold 
+
+            {/* Hire Me → Contact */}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="bg-primary text-primary-foreground px-6 py-2.5 font-semibold
                 hover:bg-primary/90 transition-colors duration-300"
             >
               Hire Me
-            </a>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -65,7 +84,11 @@ const Navbar = () => {
             className="md:hidden text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -81,22 +104,22 @@ const Navbar = () => {
           >
             <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.label}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-white/70 hover:text-primary font-medium py-2 transition-colors"
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-white/70 hover:text-primary font-medium py-2 text-left transition-colors"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setIsMobileMenuOpen(false)}
+
+              {/* Hire Me (Mobile) */}
+              <button
+                onClick={() => scrollToSection("contact")}
                 className="bg-primary text-primary-foreground px-6 py-3 font-semibold text-center mt-2"
               >
                 Hire Me
-              </a>
+              </button>
             </div>
           </motion.div>
         )}

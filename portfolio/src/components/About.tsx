@@ -1,17 +1,17 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Database, Code2, Brain, TrendingUp } from "lucide-react";
+import { Database, Code2, BarChart3, Workflow, Smartphone } from "lucide-react";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const highlights = [
-    { icon: Database, label: "Data Engineering", desc: "Building robust data pipelines" },
-    { icon: Brain, label: "Machine Learning", desc: "Predictive modeling & AI" },
-    { icon: Code2, label: "Software Dev", desc: "Full-stack applications" },
-    { icon: TrendingUp, label: "Analytics", desc: "Data-driven insights" },
+    { icon: Database, label: "Data Engineering", desc: "ETL & data pipelines" },
+    { icon: BarChart3, label: "Data Analytics", desc: "Power BI & insights" },
+    { icon: Workflow, label: "Machine Learning", desc: "Fundamentals & evaluation" },
+    { icon: Code2, label: "Software Development", desc: "MERN & Spring Boot" },
+    { icon: Smartphone, label: "Mobile Applications", desc: "Android & mobile apps" },
   ];
 
   return (
@@ -31,28 +31,54 @@ const About = () => {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* LEFT TEXT */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I'm a passionate <span className="text-primary font-semibold">Data Science undergraduate</span> with 
-                a deep curiosity for uncovering patterns in data and building intelligent systems. 
-                My journey bridges the worlds of data science and software engineering.
+              <p className="text-lg text-muted-foreground leading-relaxed mb-5">
+                I’m a{" "}
+                <span className="text-primary font-semibold">
+                  Data Science undergraduate
+                </span>{" "}
+                specializing in{" "}
+                <span className="text-primary font-semibold">
+                  Data Engineering and Data Analytics
+                </span>
+                , focused on converting raw data into structured, actionable
+                insights.
               </p>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                I thrive on turning complex datasets into actionable insights using 
-                machine learning algorithms, statistical analysis, and modern visualization techniques. 
-                Beyond analytics, I love crafting clean, efficient code that brings data solutions to life.
+
+              <p className="text-lg text-muted-foreground leading-relaxed mb-5">
+                I use{" "}
+                <span className="text-primary font-semibold">
+                  SQL, Python, and Power BI
+                </span>{" "}
+                to build reliable data pipelines, create interactive dashboards,
+                and support data-driven decision-making. While I have a solid
+                understanding of{" "}
+                <span className="text-primary font-semibold">
+                  Machine Learning fundamentals
+                </span>
+                , my primary interest lies in scalable data solutions and
+                analytics.
               </p>
+
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not diving into data, you'll find me exploring new technologies, 
-                contributing to open-source projects, and continuously learning in this 
-                ever-evolving field.
+                Along side data work, I’m experienced in{" "}
+                <span className="text-primary font-semibold">
+                  software and mobile application development
+                </span>{" "}
+                using{" "}
+                <span className="text-primary font-semibold">
+                  MERN stack, Spring Boot, HTML, CSS, and mobile technologies
+                </span>
+                , allowing me to contribute across end-to-end systems.
               </p>
             </motion.div>
 
+            {/* RIGHT CARDS */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -73,7 +99,9 @@ const About = () => {
                   <h3 className="font-heading font-semibold text-sm sm:text-base text-foreground mb-1">
                     {item.label}
                   </h3>
-                  <p className="text-xs sm:text-sm text-muted-foreground">{item.desc}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    {item.desc}
+                  </p>
                 </motion.div>
               ))}
             </motion.div>

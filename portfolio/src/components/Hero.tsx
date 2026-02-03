@@ -3,6 +3,18 @@ import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import myImg from "../assets/myimg.png";
 
 const Hero = () => {
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    // If you have a sticky navbar, set this to -70 or -80
+    const yOffset = -70;
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden bg-dark">
       {/* Animated background elements */}
@@ -20,7 +32,6 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        {/* ✅ TWO COLUMN LAYOUT */}
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
           {/* LEFT CONTENT */}
           <motion.div
@@ -64,23 +75,28 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mt-8 md:mt-10"
             >
-              <a
-                href="#contact"
+              {/* ✅ SCROLL TO CONTACT */}
+              <button
+                type="button"
+                onClick={() => scrollToSection("contact")}
                 className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 font-heading font-semibold text-sm sm:text-lg hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/30"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 Get in Touch
-              </a>
+              </button>
 
-              <a
-                href="#projects"
+              {/* ✅ SCROLL TO PROJECTS */}
+              <button
+                type="button"
+                onClick={() => scrollToSection("projects")}
                 className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 font-heading font-semibold text-sm sm:text-lg hover:bg-white hover:text-dark transition-all duration-300"
               >
                 View Projects
-              </a>
+              </button>
 
+              {/* ✅ DOWNLOAD CV */}
               <a
-                href="/resume.pdf"
+                href="/VisnaSithmi_CV.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 font-heading font-semibold text-sm sm:text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
@@ -120,28 +136,24 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* RIGHT IMAGE (BIGGER) */}
+          {/* RIGHT IMAGE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             className="relative flex justify-center lg:justify-end lg:pr-8"
           >
-            {/* ✅ Bigger glow blob */}
             <motion.div
               className="absolute w-[460px] h-[460px] rounded-full bg-primary/30 blur-3xl"
               animate={{ scale: [1, 1.15, 1], opacity: [0.25, 0.45, 0.25] }}
               transition={{ duration: 6, repeat: Infinity }}
             />
-
-            {/* ✅ Bigger rotating ring */}
             <motion.div
               className="absolute w-[480px] h-[480px] rounded-full border border-primary/30"
               animate={{ rotate: 360 }}
               transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             />
 
-            {/* ✅ Bigger image */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
@@ -174,8 +186,9 @@ const Hero = () => {
         transition={{ delay: 1.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2"
       >
-        <a
-          href="#about"
+        <button
+          type="button"
+          onClick={() => scrollToSection("about")}
           className="text-white/40 hover:text-primary transition-colors"
         >
           <motion.div
@@ -184,7 +197,7 @@ const Hero = () => {
           >
             <ArrowDown className="w-6 h-6" />
           </motion.div>
-        </a>
+        </button>
       </motion.div>
     </section>
   );
