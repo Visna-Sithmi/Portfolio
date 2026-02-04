@@ -4,8 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
-  // ✅ Dev: "/", Production (GitHub Pages): "/Portfolio/"
-  base: mode === "production" ? "/Portfolio/" : "/",
+  // ✅ Vercel needs root base in production too (no /Portfolio/)
+  base: "/",
 
   server: {
     host: "::",
@@ -15,7 +15,10 @@ export default defineConfig(({ mode }) => ({
     },
   },
 
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+  ].filter(Boolean),
 
   resolve: {
     alias: {
