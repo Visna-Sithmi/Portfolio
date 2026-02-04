@@ -8,8 +8,8 @@ const Footer = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-white/60 text-sm">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-primary fill-primary" />
+            <span>Visna Sithmi</span>
+            
             <span>© {currentYear}</span>
           </div>
 
