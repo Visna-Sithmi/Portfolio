@@ -96,7 +96,7 @@ const Hero = () => {
 
               {/* ✅ DOWNLOAD CV */}
               <a
-                href="/VisnaSithmi.pdf"
+                href="/Visna_Sithmi_CV.pdf"
                 download
                 className="inline-flex items-center justify-center gap-2 border-2 border-primary text-primary px-6 sm:px-8 py-3 sm:py-4 font-heading font-semibold text-sm sm:text-lg hover:bg-primary hover:text-primary-foreground transition-all duration-300"
               >
